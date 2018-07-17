@@ -1,0 +1,448 @@
+@import "fontawesome.scss";
+@import "fa-solid.scss";
+@import "fa-regular.scss";
+@import "fa-brands.scss";
+@import "v4-shims.scss";
+@import "_reset.scss";
+
+@font-face {
+  font-family: 'proxima_nova_rgbold';
+  src: url('../webfonts/proxima_nova_bold-webfont.woff2') format('woff2'),
+       url('../webfonts/proxima_nova_bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'proxima_nova_ththin';
+  src: url('../webfonts/proxima_nova_thin-webfont.woff2') format('woff2'),
+       url('../webfonts/proxima_nova_thin-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'proxima_nova_rgregular';
+  src: url('../webfonts/proximanova-regular-webfont.woff2') format('woff2'),
+       url('../webfonts/proximanova-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$textColor: #231F20;
+$titleColor: #17584F;
+$lineColor: rgba(109,110,113,0.4);
+$regular: 'proxima_nova_rgregular';
+$bold: 'proxima_nova_rgbold';
+$light: 'proxima_nova_ththin';
+$paddingDesktop: 80px;
+
+body {
+  font-family: $regular;
+  color: $textColor;
+}
+h1 {
+  font-size: 48px;
+  color: #17584F;
+  letter-spacing: -0.31px;
+  line-height: 51px;
+  font-family: $bold;
+}
+a:hover {
+  text-decoration: none;
+}
+
+// sidebar
+
+#sidebar{
+	background:#364339;
+	width:200px;
+	height:100%;
+	display:block;
+	position:absolute;
+	left:-200px;
+	top:0px;
+	transition:left 0.3s linear;
+  z-index: 99;
+  ul {
+  	margin-top:50px;
+  	padding:0px;
+    li {
+    	list-style:none;
+      a {
+      	color:#ccc;
+      	border-bottom:1px solid rgba(255,255,255,0.3);
+      	display:block;
+      	width:170px;
+      	padding:15px;
+        margin-left: 15px;
+      	text-decoration: none;
+      }
+    }
+  }
+}
+#sidebar.visible{
+	left:0px;
+	transition:left 0.3s linear;
+  #sidebar-btn {
+    background-color: rgba(255,255,255,0.8);
+    border: 1px solid $lineColor;
+  }
+}
+#sidebar-btn{
+	display:inline-block;
+	vertical-align: middle;
+	cursor:pointer;
+	padding:5px 15px;
+	position:absolute;
+	top:53px;
+	right:-68px;
+  font-size: 30px;
+  color:#149D8F;
+}
+
+// header
+
+header {
+  background: url("../img/bg-header.jpg") no-repeat center center;
+  background-size: cover;
+  padding: 37px 0 200px;
+  border-bottom: 12px solid #17584F;
+  position: relative;
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .logo {
+    width:224px;
+    padding: 5px 0 5px 30px;
+    border-left: 1px solid $lineColor;
+    margin-left: $paddingDesktop;
+  }
+  h1 {
+    max-width:744px;
+    margin: 50px 0 50px $paddingDesktop;
+  }
+  .btn-header {
+    max-width: 410px;
+    margin-left: $paddingDesktop;
+    a:first-child {
+      background-color: rgba(255,255,255,0.20);
+      border: 1px solid #FFFFFF;
+      border-radius: 100px;
+      font-size: 20px;
+      color: #17584F;
+      text-transform: uppercase;
+      padding: 20px 35px;
+      transition: background-color 0.5s;
+    }
+    a:first-child:hover {
+      background-color: rgba(255,255,255,0.80);
+    }
+    a:last-child {
+      font-size: 17px;
+      color: #17584F;
+      border-radius: 100px;
+      text-align: center;
+      display:block;
+      margin-top: 10px;
+    }
+  }
+  .info-header {
+    display: inline-flex;
+    align-items: center;
+    background: url("../img/bg-info-header.svg") no-repeat left center;
+    width:844px;
+    height:150px;
+    padding-left: $paddingDesktop;
+    position: absolute;
+    bottom:-40px;
+    z-index: 9;
+    div {
+      max-width: 160px;
+      margin-right: 40px;
+    }
+    i {
+      display: block;
+      color:rgba(255,255,255,0.4);
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    span {
+      display: block;
+      font-size: 17px;
+      color: #FFFFFF;
+      line-height: 20px;
+      text-transform: uppercase;
+      font-family: $light;
+    }
+  }
+}
+
+// adm fiduciaria
+
+.adm-fiduc {
+  padding: 80px 0 0;
+  background-color: #8AAC4A;
+  position: relative;
+  h2 {
+    font-size: 48px;
+    color: #17584F;
+    letter-spacing: -0.31px;
+    line-height: 51px;
+    font-family: $bold;
+    margin-bottom: 30px;
+  }
+  .fundos-adm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span:first-child {
+      font-size: 120px;
+      color: #FFF;
+      text-align: center;
+    }
+    span:last-child {
+      font-size: 21px;
+      color: #17584F;
+      line-height: 22px;
+      text-align: left;
+      margin-left: 10px;
+    }
+  }
+  .itens-adm {
+    margin: 50px 0 0;
+    > div > div {
+      margin: 15px 0;
+    }
+    i {
+      display: block;
+      color: rgba(255,255,255,0.4);
+      font-size: 60px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    span {
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+      display: block;
+      margin-bottom: 30px;
+    }
+  }
+  a.btn {
+    background-color: rgba(255,255,255,0);
+    border: 1px solid #FFF;
+    border-radius: 100px;
+    font-size: 18px;
+    color: #17584F;
+    text-transform: uppercase;
+    padding: 10px 25px;
+    margin: 30px 0 60px;
+    transition:background-color 0.5s;
+  }
+  a.btn:hover {
+    background-color: rgba(255,255,255,0.4) !important;
+  }
+}
+
+// modal mais
+
+.modal-mais {
+  .row > div {
+    padding: 100px 30px;
+    img {
+      margin:0 auto;
+      display: block;
+    }
+    h3 {
+      font-size: 20px;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+    a {
+      background-color: rgba(35,31,32,0.40);
+      border: 1px solid #FFFFFF;
+      border-radius: 100px;
+      font-size: 13px;
+      color: #FFFFFF;
+      padding: 12px 24px;
+      margin:0 auto;
+      display: inline-block;
+      margin-top:20px;
+      transition: background 0.5s;
+    }
+    a:hover {
+      background-color: rgba(35,31,32,0.70);
+    }
+  }
+  .mm-1 {
+    background: url("../img/bg-mm-1.jpg") no-repeat center center;
+    background-size: cover;
+  }
+  .mm-2 {
+    background: url("../img/bg-mm-2.jpg") no-repeat center center;
+    background-size: cover;
+  }
+  .mm-3 {
+    background: url("../img/bg-mm-3.jpg") no-repeat center center;
+    background-size: cover;
+  }
+  .mm-4 {
+    background: url("../img/bg-mm-4.jpg") no-repeat center center;
+    background-size: cover;
+  }
+  .mm-5 {
+    background: url("../img/bg-mm-5.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+
+// conheca tambem, parceiros, onde estamos
+
+.conheca-parceiros {
+  h2 {
+    border-bottom:1px solid $lineColor;
+    font-size: 20px;
+    color: #17584F;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 53px 0 8px;
+    width: 300px;
+    margin: 0 auto 20px;
+  }
+  img {
+    display: block;
+    margin:0 auto;
+  }
+  h3 {
+    font-family: $bold;
+    font-size: 17px;
+    text-align: center;
+    border-bottom:1px solid $lineColor;
+    width: 200px;
+    margin: 0 auto 12px;
+    padding: 30px 0 12px;
+  }
+  p {
+    font-size: 13px;
+    line-height: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+// footer
+
+footer {
+  background-color: #374338;
+  padding: 60px 0 0;
+  margin-top: 60px;
+  border-top: 6px solid #8CAD34;
+  h3 {
+    font-size: 17px;
+    color: rgba(255,255,255,0.7);
+    font-family: $bold;
+    margin-bottom: 20px;
+  }
+  ul {
+    margin-bottom: 40px;
+  }
+  li {
+    list-style: none;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  a, a:hover {
+    color: #FFF;
+  }
+  .grafismo-modal {
+    // max-width: 200px;
+  }
+  .footer-aux {
+    background-color: #231F20;
+    color:#FFF;
+    text-align: center;
+    padding: 15px;
+    margin-top: 60px;
+    font-size: 13px;
+    line-height: 18px;
+    a {
+      color:#FFF;
+      margin: 0 6px;
+      :hover {
+        color:#FFF;
+      }
+    }
+  }
+  .footer-aux-2 {
+    background-color: #FFF;
+    text-align: center;
+    padding: 15px;
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+// media queries
+
+@media (max-width:767px) {
+  header {
+    background: none;
+    background-size: cover;
+    padding: 37px 0 50px;
+    border-bottom: 12px solid #17584F;
+    position: relative;
+    h1 {
+      font-size: 40px;
+      color: #17584F;
+      letter-spacing: -0.31px;
+      line-height: 51px;
+      font-family: $bold;
+      margin: 50px 20px !important;
+      text-align: center;
+    }
+    .info-header {
+      display: none !important;
+    }
+    .btn-header {
+      max-width: auto;
+      margin: 0 auto;
+      a:first-child {
+        background: rgba(255,255,255,0.40);
+        border: 1px solid #1F8665 !important;
+        border-radius: 100px;
+        font-size: 16px !important;
+        color: #17584F;
+        text-transform: uppercase;
+        padding: 10px 20px;
+        display: block;
+        margin: 0 20px;
+        // font-family: $light;
+      }
+      a:last-child {
+        font-size: 14px;
+        color: #17584F;
+        border-radius: 100px;
+        text-align: center;
+        display:block;
+        margin-top: 10px;
+      }
+    }
+  }
+  .adm-fiduc {
+    padding: 40px 0 0;
+    background-color: #8AAC4A;
+    position: relative;
+    h2 {
+      font-size: 40px;
+      color: #17584F;
+      letter-spacing: -0.31px;
+      line-height: 51px;
+      font-family: $bold;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+  }
+  footer ul, footer h3  {
+    padding-left: 40px;
+  }
+}
